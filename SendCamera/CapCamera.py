@@ -120,12 +120,12 @@ class camera :
             time.sleep(0.05)
 
 if __name__ == "__main__" :
-    sio.connect('http://220.68.82.79:4000')     # Nas의 Flask-SocketIO 서버에 연결
+    sio.connect('접속할 IP 주소:포트')     # Nas의 Flask-SocketIO 서버에 연결
     NewCamera = camera()
     NewCamera.run()
 
     for i in range(len(NewCamera.cam_list)) :   # 등록된 카메라 해제
         NNewCamera.cam_list[i].release
 
-    sio.disconnect('http://220.68.82.79:4000')
+    sio.disconnect('접속할 IP 주소:포트')
     cv2.destroyAllWindows()
